@@ -13,14 +13,7 @@ export default {
   computed: {
     text() {
       let text = this.body
-      text = typograph(text)
-      if('еду в Магадан' === typograph('еду в Магадан')) {
-        console.log('equal')
-      }else{
-        console.log('not equal')
-      }
-      console.log(typograph('еду в Магадан'))
-      return text
+      return typograph(text)
     }
   }
 }
