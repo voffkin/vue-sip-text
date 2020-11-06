@@ -14,4 +14,11 @@ Vue.component('cdiv', Text);
 App.vue
 ```vue
     <cdiv body="lorem ipsum" />
+    
+    <cdiv
+        tag="p"
+        className="my-class"
+        body="lorem ipsum"
+    />
+    
 ```
