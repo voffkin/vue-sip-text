@@ -1,20 +1,25 @@
-<template>
-  <div v-html="text" />
-</template>
-
 <script>
 import {typograph} from './typograph.js'
 
 export default {
-  name: 'SipText',
+  name: "AppText",
+  functional: true,
   props: {
+    className: String,
+    tag: String,
     body: String,
   },
-  computed: {
-    text() {
-      let text = this.body
-      return typograph(text)
-    }
+
+  render(h, { props }) {
+    const tag = props.tag || 'div';
+    return h(
+      tag, {
+        class: props.className,
+        domProps: {
+          innerHTML: typograph(props.body)
+        }
+      }
+    );
   }
-}
+};
 </script>
